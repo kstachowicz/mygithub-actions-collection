@@ -28,12 +28,12 @@ try {
             armTemplate = "function-app";
         if (lines[i].startsWith("- [x] PCI")) {
             applyPolicy = true;
-            policyName = "496eeda9-8f2f-4d5e-8dfd-204f0a92ed41";   
+            policyName = "Audit PCI";   
             policyId = "/providers/Microsoft.Authorization/policySetDefinitions/496eeda9-8f2f-4d5e-8dfd-204f0a92ed41"
         }
         if (lines[i].startsWith("- [x] HIPAA")) {
             applyPolicy = true;
-            policyName = "a169a624-5599-4385-a696-c8d643089fab";
+            policyName = "Audit HITRUST/HIPAA";
             policyId = "/providers/Microsoft.Authorization/policySetDefinitions/a169a624-5599-4385-a696-c8d643089fab";
         }
     }
