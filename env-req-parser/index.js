@@ -54,3 +54,8 @@ try {
     core.setFailed(error.message);
     core.setFailed(`Error - Github Actions failure: ${error}`);
 }
+
+run()
+
+export default run
+
