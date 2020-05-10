@@ -51,6 +51,11 @@ try {
     core.setOutput('applyPolicy', applyPolicy ? 'true' : 'false');
     core.setOutput('policyName', policyName);
 
+    console.log("appName: ", appName);
+    console.log('armTemplate: ', armTemplate);
+    console.log('approved: ', 'true');
+    console.log('applyPolicy: ', applyPolicy ? 'true' : 'false');
+    console.log('policyName: ', policyName);
 
 } catch(error) {
     core.setFailed(error.message);
