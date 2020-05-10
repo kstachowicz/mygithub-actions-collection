@@ -18,6 +18,8 @@ try {
         return;
     }
 
+    console.log("Issue is approved correctly.")
+
     let appName = "", armTemplate = "", applyPolicy = false, policyName = "";
 
     console.log(issue.body);
@@ -55,7 +57,4 @@ try {
     core.setFailed(`Error - Github Actions failure: ${error}`);
 }
 
-run()
-
-export default run
 
