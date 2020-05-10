@@ -9,14 +9,14 @@ try {
     if(!issue.body) return;
     if(!issue.labels) return;
 
-    let labels = Array.from(issue.labels);
-    let approved = labels.some(val =>name == "approved");
+    //let labels = Array.from(issue.labels);
+    //let approved = labels.some(val =>name == "approved");
 
-    if(!approved) {
-        console.log("Issue is not approved.");
-        core.setOutput("approved", 'false');
-        return;
-    }
+    // if(!approved) {
+    //     console.log("Issue is not approved.");
+    //     core.setOutput("approved", 'false');
+    //     return;
+    // }
 
     console.log("Issue is approved correctly.")
 
