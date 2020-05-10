@@ -11,7 +11,7 @@ try {
 
     console.log("Issue is approved correctly.")
 
-    let appName = "", armTemplate = "", applyPolicy = false, policyName = "", policyDefinition = "";
+    let appName = "", armTemplate = "", applyPolicy = false, policyName = "", policyId = "";
 
     console.log(issue.body);
     const lines = issue.body.match(/[^\r\n]+/g)
@@ -28,13 +28,13 @@ try {
             armTemplate = "function-app";
         if (lines[i].startsWith("- [x] PCI")) {
             applyPolicy = true;
-            policyName = "Audit PCI";       
-            policyDefinition = "[Preview]: Audit PCI v3.2.1:2018 controls and deploy specific VM Extensions to support audit requirements";
+            policyName = "496eeda9-8f2f-4d5e-8dfd-204f0a92ed41";   
+            policyId = "/providers/Microsoft.Authorization/policySetDefinitions/496eeda9-8f2f-4d5e-8dfd-204f0a92ed41"
         }
         if (lines[i].startsWith("- [x] HIPAA")) {
             applyPolicy = true;
-            policyName = "Audit HITRUST/HIPAA";
-            policyDefinition = "Audit HITRUST/HIPAA controls and deploy specific VM Extensions to support audit requirements";
+            policyName = "a169a624-5599-4385-a696-c8d643089fab";
+            policyId = "/providers/Microsoft.Authorization/policySetDefinitions/a169a624-5599-4385-a696-c8d643089fab";
         }
     }
 
@@ -43,14 +43,14 @@ try {
     core.setOutput('approved', 'true');
     core.setOutput('applyPolicy', applyPolicy ? 'true' : 'false');
     core.setOutput('policyName', policyName);
-     core.setOutput('policyDefinition', policyDefinition);
+     core.setOutput('policyId', policyId);
 
     console.log("appName: ", appName);
     console.log('armTemplate: ', armTemplate);
     console.log('approved: ', 'true');
     console.log('applyPolicy: ', applyPolicy ? 'true' : 'false');
     console.log('policyName: ', policyName);
-    console.log('policyDefinition: ', policyDefinition);
+    console.log('policyId: ', policyId);
 
 } catch(error) {
     core.setFailed(error.message);
